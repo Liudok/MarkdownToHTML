@@ -6,9 +6,7 @@ Reader::Reader(std::string input_filename)
 	  _file(input_filename)
 {
 	if (!_file.is_open())
-	{
 		throw std::runtime_error(strerror(errno));
-	}
 	else
 		go_to_next();
 }
