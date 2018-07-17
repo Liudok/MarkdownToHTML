@@ -19,18 +19,18 @@ enum E_tag
 
 class Tag_line
 {
+	public:
+		Tag_line(std::string input_filename);
+		std::string		get_next_paragraph();
+
 	private:
 		Reader			_reader;
 		bool			_finished;
 		std::string		_current;
 		std::string		_regexps[REGS];
 
-	public:
-		Tag_line(std::string input_filename);
-
 		std::string		get_current();
 		void			go_to_next();
-		std::string		get_next_paragraph();
 		std::string		make_ul(std::string str);
 		std::string		check_style(std::string str);
 		std::string		check_ol(std::string str);
